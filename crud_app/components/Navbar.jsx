@@ -4,7 +4,7 @@ export default function Navbar() {
     return (
         <div className="navbar bg-base-100">
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl hover:btn btn-primary">Crud App</a>
             </div>
             <div className="flex-none">
                 <div className="dropdown dropdown-end">
@@ -42,7 +42,7 @@ export default function Navbar() {
                         <div className="w-10 rounded-full">
                             <img
                                 alt="Tailwind CSS Navbar component"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                src="https://t3.ftcdn.net/jpg/07/94/81/18/360_F_794811894_0fISyC9TtwBqmBBSX8bxPDa2vNBbX3p7.jpg" />
                         </div>
                     </div>
                     <ul
