@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 
 export function middleware(req) {
     const origin = req.headers.get('origin');
-    
+    console.log(origin);
     const response = NextResponse.next();
 
     if (origin === 'https://crud-using-next.vercel.app') {
