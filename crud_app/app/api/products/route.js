@@ -30,9 +30,22 @@ export async function GET() {
 
 
 export async function POST(request) {
-    const { name, image, price, category } = await request.json();
-    await connectMongoDB();
-    console.log({ name });
-    await Product.create({ name, image, price, category });
-    return new NextResponse({ mesage: "Product created Succesfully" }, { status: 201 });
+   try {
+     const { name, image, price, category } = await request.json();
+     await connectMongoDB();
+     console.log({ name });
+     await Product.create({ name, image, price, category });
+     return new NextResponse({ mesage: "Product created Succesfully" }, { status: 201 });
+   } catch (error) {
+      console.log("Product Not Added!", error);
+   }
 }
+
+
+export async function DELETE(request) {
+  const id = request.nextUrl.searchParams.get("id");
+  await  connectMongoDB();
+  await Product.findByIdAndDelete(id);
+  return new NextResponse({ mesage: "Product Deleted Succesfully" }, { status: 200 });
+}
+

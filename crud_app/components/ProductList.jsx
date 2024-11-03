@@ -1,11 +1,13 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import RemoveBtn from './RemoveBtn';
 
 const getProducts = async () => {
     try {
         const res = await fetch('http://localhost:3000/api/products', {
             cache: "no-store",
+            // no-store: This option ensures that the request bypasses the cache entirely. Neither the browser cache nor the server cache is checked, and the response is never cached, ensuring fresh data is always retrieved directly from the server.
         }
         );
         console.log({ res });
@@ -71,6 +73,13 @@ export default function ProductList() {
                                             className="w-16 h-16 object-cover"
                                         />
                                     </td>
+                                    <th className='flex m-2'>
+                                        <Link href={`/editProduct/${product._id}`}>
+                                            <button className="btn btn-outline btn-accent py-0 mr-2">Edit</button>
+                                        </Link>
+                                        <RemoveBtn id={product._id} />
+                                    </th>
+
                                 </tr>
                             ))
                         ) : (

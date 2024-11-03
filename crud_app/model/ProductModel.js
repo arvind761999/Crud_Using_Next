@@ -25,5 +25,5 @@ const topicSchema = new Schema(
 );
 
 // Use singular "Product" for the model name and plural "products" for the collection
-const ProductModel = mongoose.models.Product || mongoose.model("Product", topicSchema); // Change "Products" to "Product"
+const ProductModel = mongoose.models.Product || mongoose.model("Product", topicSchema); 
 export default ProductModel;
