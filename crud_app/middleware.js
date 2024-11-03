@@ -7,7 +7,7 @@ export function middleware(req) {
     console.log(origin);
     const response = NextResponse.next();
 
-    if (origin === 'https://crud-using-next.vercel.app') {
+    if (origin === 'http://localhost:3000') {
         response.headers.set('Access-Control-Allow-Origin', origin);
         response.headers.set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
         response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
